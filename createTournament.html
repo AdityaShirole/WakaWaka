@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <!--Import Google Icon Font-->
+      <link href="http://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <!--Import materialize.css-->
+      <link type="text/css" rel="stylesheet" href="css/materialize.min.css"  media="screen,projection"/>
+
+      <!--Let browser know website is optimized for mobile-->
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+      <!-- CSS -->
+      <style type="text/css">
+      .container {
+        margin-top: 32px;
+      }
+
+      .card-heading {
+        font-size: 24px;
+        margin-left: 16px;
+      }
+      </style>
+    </head>
+
+    <body class="teal">
+      <!--Import jQuery before materialize.js-->
+      <script type="text/javascript" src="js/jquery.min.js"></script>
+      <script type="text/javascript" src="js/materialize.min.js"></script>
+
+      <!-- Script for the page -->
+      <script type="text/javascript">
+
+          $(document).ready(function() {
+
+              // Function to get Url Parameter
+              var getUrlParameter = function getUrlParameter(sParam) {
+                var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+                    sURLVariables = sPageURL.split('&'),
+                    sParameterName,
+                    i;
+
+                for (i = 0; i < sURLVariables.length; i++) {
+                    sParameterName = sURLVariables[i].split('=');
+
+                    if (sParameterName[0] === sParam) {
+                        return sParameterName[1] === undefined ? true : sParameterName[1];
+                    }
+                }
+              };
+
+              var name = getUrlParameter('name');
+
+              //alert("Name is " + name);
+
+
+              $('#createButton').click(function() {
+                  //alert( $('#team_name').val() );
+                  //
+                  $('#modal1').openModal();
+                  
+              });
+          });
+
+      </script>
+
+      <!-- Container starts -->
+      <div class="container">
+        
+        <!-- row to hold the card -->
+        <div class="row">
+          
+          <!-- col -->
+          <div class="col s12">
+            
+            <!-- card panel -->
+            <div class="card-panel white">
+              
+
+              <!-- Row for heading -->
+              <div class="row">
+                <span class="card-title text-darken-4 center-align card-heading">Add teams to the Tournament</span>
+              </div>
+
+              <!-- row to hold create team form -->
+              <div class="row">
+                <form  class="col s12">
+                 
+              <!-- Wrapper for tournament form -->
+              <div class="row valign-wrapper">
+              
+                <!-- div to hold the input field for tournament name -->
+                <div class="input-field col s5 valign">
+                  <input type="text" id="team_name" placeholder="Enter the name of team">
+                  <label for="team_name">Team Name</label>
+                </div>
+                <!-- div to hold the input field for tournament name ends-->
+
+
+                <!-- div to hold the input field for tournament name -->
+                <div class="input-field col s4 valign">
+                  <input type="text" id="home_name" placeholder="Enter Home Ground">
+                  <label for="home_name">Home Ground</label>
+                </div>
+                <!-- div to hold the input field for tournament name ends-->
+
+                <!-- div to hold the button to create the tournament -->
+                <div class="col s4 valign">
+                  <div id="createButton" data-target="modal1" 
+                      class="modal-trigger btn waves-effect waves-light"  name="">
+                  Create Team
+                  <i class="material-icons right">add</i>
+                  </div>
+                </div>
+                <!-- Div to hold button to create tournament ends -->
+
+              </div>
+              <!-- Wrapper for tournament form ends -->
+
+                </form>
+              <!-- Form row ends -->
+              </div>
+
+              <!-- Divider between  -->
+            <div class="row">
+              <div class="col s4 offset-s4 center-align divider teal"></div>
+            </div>
+            
+
+            <div class="row">
+              <div class="col s12">
+                <ul class="collection ">
+                  <li class="collection-item"><div>Manchester United<a href="#!" class="secondary-content"><i class="material-icons">clear</i></a></div></li>
+                  <li class="collection-item"><div>Chelsea FC<a href="#!" class="secondary-content"><i class="material-icons">clear</i></a></div></li>
+                  <li class="collection-item"><div>Real Madrid<a href="#!" class="secondary-content"><i class="material-icons">clear</i></a></div></li>
+                  <li class="collection-item"><div>Barcelone<a href="#!" class="secondary-content"><i class="material-icons">clear</i></a></div></li>
+
+                  <li class="collection-item"><div>Manchester City<a href="#!" class="secondary-content"><i class="material-icons">clear</i></a></div></li>
+                  <li class="collection-item"><div>Arsenal FC<a href="#!" class="secondary-content"><i class="material-icons">clear</i></a></div></li>
+                  <li class="collection-item"><div>Bayern Munich<a href="#!" class="secondary-content"><i class="material-icons">clear</i></a></div></li>
+                  <li class="collection-item"><div>Paris Saint Germain<a href="#!" class="secondary-content"><i class="material-icons">clear</i></a></div></li>
+                </ul>
+              </div>
+            </div>
+
+
+
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+
+        <!-- Modal Structure -->
+    <div id="modal1" class="modal modal-fixed-footer">
+      <div class="modal-content">
+        <h5>Add Players to the team</h5>
+        
+        <!-- Add form here -->
+        
+        <!-- Single row for a player -->
+        <div class="row">
+          <div class="valign-wrapper">
+            <div class="input-field col s4 valign">
+                  <input type="text" id="home_name" placeholder="Name">
+            </div>
+
+            <div class="input-field col s4 valign">
+                  <input type="text" id="home_name" placeholder="Age">
+            </div>
+
+            <div class="input-field col s4 valign">
+                  <input type="text" id="home_name" placeholder="Kit Number">
+            </div>
+          </div>
+        </div>
+        <!-- Single row for a player ends -->
+
+        <!-- Single row for a player -->
+        <div class="row">
+          <div class="valign-wrapper">
+            <div class="input-field col s4 valign">
+                  <input type="text" id="home_name" placeholder="Name">
+            </div>
+
+            <div class="input-field col s4 valign">
+                  <input type="text" id="home_name" placeholder="Age">
+            </div>
+
+            <div class="input-field col s4 valign">
+                  <input type="text" id="home_name" placeholder="Kit Number">
+            </div>
+          </div>
+        </div>
+        <!-- Single row for a player ends -->
+
+        <!-- Single row for a player -->
+        <div class="row">
+          <div class="valign-wrapper">
+            <div class="input-field col s4 valign">
+                  <input type="text" id="home_name" placeholder="Name">
+            </div>
+
+            <div class="input-field col s4 valign">
+                  <input type="text" id="home_name" placeholder="Age">
+            </div>
+
+            <div class="input-field col s4 valign">
+                  <input type="text" id="home_name" placeholder="Kit Number">
+            </div>
+          </div>
+        </div>
+        <!-- Single row for a player ends -->
+
+          <!-- Single row for a player -->
+        <div class="row">
+          <div class="valign-wrapper">
+            <div class="input-field col s4 valign">
+                  <input type="text" id="home_name" placeholder="Name">
+            </div>
+
+            <div class="input-field col s4 valign">
+                  <input type="text" id="home_name" placeholder="Age">
+            </div>
+
+            <div class="input-field col s4 valign">
+                  <input type="text" id="home_name" placeholder="Kit Number">
+            </div>
+          </div>
+        </div>
+        <!-- Single row for a player ends -->
+
+          <!-- Single row for a player -->
+        <div class="row">
+          <div class="valign-wrapper">
+            <div class="input-field col s4 valign">
+                  <input type="text" id="home_name" placeholder="Name">
+            </div>
+
+            <div class="input-field col s4 valign">
+                  <input type="text" id="home_name" placeholder="Age">
+            </div>
+
+            <div class="input-field col s4 valign">
+                  <input type="text" id="home_name" placeholder="Kit Number">
+            </div>
+          </div>
+        </div>
+        <!-- Single row for a player ends -->
+
+      </div>
+      <div class="modal-footer">
+        <a href="#!" class=" modal-action modal-clear waves-effect waves-green btn-flat">Proceed</a>
+      </div>
+    </div>
+
+
+
+
+    </body>
+  </html>
